@@ -1,0 +1,91 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "viper-bench"
+version = "1.0.0"
+description = "VIPER: an expert-curated benchmark for vision-language models in veterinary pathology."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.10"
+authors = [
+    { name = "Luca Weishaupt" },
+    { name = "Guillaume Jaume", email = "guillaume.jaume@unil.ch" },
+]
+maintainers = [
+    { name = "Mahmood Lab", email = "faisalmahmood@bwh.harvard.edu" },
+]
+keywords = [
+    "veterinary-pathology",
+    "toxicologic-pathology",
+    "vision-language-models",
+    "benchmark",
+    "histopathology",
+]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "datasets>=2.18",
+    "openai>=1.40",
+    "pillow>=10.0",
+    "tenacity>=8.2",
+    "tqdm>=4.66",
+    "rouge-score>=0.1.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.4",
+    "pre-commit>=3.6",
+    "build>=1.0",
+]
+
+[project.scripts]
+viper-eval = "viper.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mahmoodlab/viper"
+Repository = "https://github.com/mahmoodlab/viper"
+Dataset = "https://huggingface.co/datasets/MahmoodLab/viper"
+Issues = "https://github.com/mahmoodlab/viper/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["viper"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+asyncio_mode = "auto"
+
+[dependency-groups]
+dev = [
+    "pytest>=7.4",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.4",
+    "pre-commit>=3.6",
+    "build>=1.0",
+]

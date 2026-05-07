@@ -1,0 +1,483 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileProperty": "cr:fileProperty",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "prov": "http://www.w3.org/ns/prov#",
+    "samplingRate": "cr:samplingRate",
+    "equivalentProperty": "cr:equivalentProperty"
+  },
+  "@type": "sc:Dataset",
+  "name": "VIPER",
+  "alternateName": "Vision-language In Preclinical Evaluation of Rodents",
+  "description": "VIPER is the first expert-curated benchmark for evaluating vision-language models on rodent toxicologic pathology. It contains 1,251 questions over 419 H&E-stained rat histology images spanning 9 organs (kidney, liver, thyroid, male reproductive system, urinary bladder, lung, heart, gastrointestinal tract, salivary gland) and three question formats (multiple-choice, KPrim, free-text). All questions were authored and validated by board-certified veterinary pathologists (ECVP).",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "url": "https://huggingface.co/datasets/MahmoodLab/viper",
+  "sameAs": "https://github.com/mahmoodlab/viper",
+  "version": "1.0.0",
+  "datePublished": "2026-05-01",
+  "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "keywords": [
+    "veterinary pathology",
+    "toxicologic pathology",
+    "histopathology",
+    "vision-language models",
+    "rat",
+    "benchmark",
+    "preclinical safety",
+    "H&E"
+  ],
+  "creator": [
+    {
+      "@type": "Person",
+      "name": "Luca Weishaupt",
+      "affiliation": "Harvard-MIT HST; Mass General Brigham; Harvard Medical School"
+    },
+    {
+      "@type": "Person",
+      "name": "Simone de Brot",
+      "affiliation": "COMPATH, University of Bern"
+    },
+    {
+      "@type": "Person",
+      "name": "Javier Asin",
+      "affiliation": "UC Davis"
+    },
+    {
+      "@type": "Person",
+      "name": "Llorenç Grau-Roma",
+      "affiliation": "COMPATH, University of Bern"
+    },
+    {
+      "@type": "Person",
+      "name": "Nic Reitsam",
+      "affiliation": "Mass General Brigham; University of Augsburg"
+    },
+    {
+      "@type": "Person",
+      "name": "Andrew H. Song",
+      "affiliation": "UT MD Anderson Cancer Center"
+    },
+    {
+      "@type": "Person",
+      "name": "Dongmin Bang",
+      "affiliation": "Mass General Brigham; Harvard Medical School"
+    },
+    {
+      "@type": "Person",
+      "name": "Long Phi Le",
+      "affiliation": "Mass General Brigham"
+    },
+    {
+      "@type": "Person",
+      "name": "Jakob Nikolas Kather",
+      "affiliation": "TU Dresden"
+    },
+    {
+      "@type": "Person",
+      "name": "Faisal Mahmood",
+      "email": "faisalmahmood@bwh.harvard.edu",
+      "affiliation": "Mass General Brigham; Harvard Medical School"
+    },
+    {
+      "@type": "Person",
+      "name": "Guillaume Jaume",
+      "email": "guillaume.jaume@unil.ch",
+      "affiliation": "University of Lausanne"
+    }
+  ],
+  "publisher": {
+    "@type": "Organization",
+    "name": "Mahmood Lab",
+    "url": "https://faisal.ai/"
+  },
+  "isAccessibleForFree": false,
+  "citeAs": "@inproceedings{weishaupt2026viper, title={VIPER: An Expert-Curated Benchmark for Vision-Language Models in Veterinary Pathology}, author={Weishaupt, Luca and de Brot, Simone and Asin, Javier and Grau-Roma, Lloren\\c{c} and Reitsam, Nic and Song, Andrew H. and Bang, Dongmin and Le, Long Phi and Kather, Jakob Nikolas and Mahmood, Faisal and Jaume, Guillaume}, booktitle={Advances in Neural Information Processing Systems Datasets and Benchmarks}, year={2026}}",
+  "rai:dataCollection": "Image regions of interest (ROIs) were extracted from two openly licensed preclinical-pathology resources: Open TG-GATEs (Japan NIBIO; CC BY-SA 2.1 JP; 157 studies) and the MMO atlas (Citlalli et al. 2022; CC BY-NC 4.0; 9 studies). For each organ, candidate ROIs were embedded with TRACE (Jaume et al. 2024) and K-means clustered into 20 bins per organ. A board-certified veterinary pathologist sampled across bins to span the morphologic range, then authored a seed question per ROI anchored in visible morphology. Seed questions were expanded into MCQ (5-option), KPrim (4-statement), and free-text variants by GPT-5.4. MCQ and KPrim variants were filtered for text-only guessability and regenerated if a no-image trial answered correctly. All questions were reviewed by a veterinary pathologist who manually approved, revised, or rejected each item.",
+  "rai:dataAnnotationProtocol": "Each question was authored by VP1, the benchmark author and gold standard, an ECVP-board-certified veterinary pathologist. A reader study with VP1 plus two external ECVP-certified veterinary pathologists (VP2 and VP3) on a randomly sampled 100-question subset measured inter-rater agreement (Krippendorff's alpha reported in the paper).",
+  "rai:dataLimitations": "VIPER is rat-only and rodent-pathology only; it does not capture neurotoxicity, the full species spectrum used in preclinical safety, or longitudinal/dose-response reasoning. Each instance is a single 1024x1024 ROI, not a slide-, organ-, or study-level sample, so VIPER does not characterize a full diagnostic system. Free-text scoring uses an LLM-as-judge with the rubric reported in the paper; the judge introduces unavoidable noise even when guided by structured rubrics. Question categories are unevenly populated (anatomy_identification has 362 questions; quantify_feature has 60). Source images are weighted toward MMO (1,062 questions) over TG-GATEs (189 questions) at the question level.",
+  "rai:dataBiases": "All images are rat (Rattus norvegicus) tissue. The dataset inherits any cohort biases from its upstream sources (Open TG-GATEs and MMO), both of which are preclinical small-molecule toxicology study collections; therapeutic modalities outside small-molecule chemistry (e.g., biologics, gene therapy) are underrepresented. Pathologist authorship was concentrated in a single gold-standard author (VP1) for all 1,251 questions, with two external readers used only for reader-study validation on a 100-question subset. The 7-class question-category taxonomy is itself a curated lens; categories like 'identify_artifact' and 'quantify_feature' have small sample counts (63 and 60 respectively).",
+  "rai:dataUseCases": "Intended uses: evaluating vision-language models on rodent toxicologic pathology; probing visual grounding (does the model use the image?), domain transfer (does a human-pathology model work on rat tissue?), and robustness to MCQ option-order rotation; ablation studies that replace, blank, or randomize the image input to measure visual dependence. Out-of-scope uses: clinical decision-support benchmarks; slide-level, organ-level, or study-level diagnostic systems; species or organ systems not represented; longitudinal or dose-response reasoning.",
+  "rai:dataSocialImpact": "Positive impact: VIPER lowers the barrier to evaluating pathology vision-language models in preclinical toxicology, a domain where progress has been constrained by the absence of public benchmarks. Better evaluations support more reliable models, and in turn more trustworthy decision-support tools for drug-safety assessment. Risks: model scores on VIPER must not be confused with clinical or regulatory readiness; high VIPER performance does not imply suitability for clinical decision-support. Misuse risk is low (the dataset contains no human or patient-identifying data and no proprietary information beyond the upstream public sources).",
+  "rai:personalSensitiveInformation": "None. The dataset contains no human-subject data, no patient identifiers, and no Protected Health Information (PHI). All images are H&E-stained rat tissue from publicly licensed preclinical toxicology resources (Open TG-GATEs and MMO).",
+  "rai:hasSyntheticData": false,
+  "rai:dataReleaseMaintenancePlan": "Maintained by the Mahmood Lab at Harvard Medical School and Brigham and Women's Hospital. Issues, errata, and questions are tracked at https://github.com/mahmoodlab/viper/issues. Versioned snapshots are released on the Hugging Face Hub; the published evaluation suite resolves a specific revision via the --dataset-revision flag.",
+  "prov:wasDerivedFrom": [
+    {
+      "@type": "sc:Dataset",
+      "name": "Open TG-GATEs",
+      "url": "https://toxico.nibiohn.go.jp/english/",
+      "license": "https://creativecommons.org/licenses/by-sa/2.1/jp/"
+    },
+    {
+      "@type": "sc:Dataset",
+      "name": "MMO (citlalli2022mmonet)",
+      "url": "https://github.com/citlallirb/mmonet",
+      "license": "https://creativecommons.org/licenses/by-nc/4.0/"
+    }
+  ],
+  "prov:wasGeneratedBy": [
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q4929239"
+      },
+      "prov:label": "Source ROI extraction from TG-GATEs and MMO",
+      "sc:description": "Candidate H&E ROIs (1024×1024) were extracted per organ from Open TG-GATEs and the MMO atlas (Citlalli et al. 2022). VIPER includes 189 questions sourced from TG-GATEs and 1,062 from MMO.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:HumanAgent",
+          "prov:label": "VIPER curation team (Mahmood Lab and academic collaborators)"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q5227332"
+      },
+      "prov:label": "ROI embedding and clustering",
+      "sc:description": "Candidate ROIs per organ were embedded with the TRACE vision encoder (Jaume et al. 2024) and K-means clustered into 20 bins per organ. The pathologist sampled across bins to span the morphologic range.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "prov:label": "TRACE vision encoder (Jaume et al. 2024)",
+          "sc:description": "Self-supervised pathology foundation model trained on TG-GATEs. Used here only to compute ROI embeddings; no fine-tuning."
+        },
+        {
+          "@type": "prov:SoftwareAgent",
+          "prov:label": "scikit-learn K-means (k=20 per organ)"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q109719325"
+      },
+      "prov:label": "Seed question authoring by gold-standard veterinary pathologist (VP1)",
+      "sc:description": "For each selected ROI, VP1 — the benchmark author and gold standard — wrote one seed question answerable from the visible morphology. 708 seed questions were initially authored; 247 were dropped during downstream filtering, leaving 419 seeds that expanded into 1,251 final question-format variants.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:HumanAgent",
+          "prov:label": "VP1 (gold-standard author; identity anonymized)",
+          "sc:description": "ECVP-board-certified veterinary pathologist; gold-standard author of all 1,251 questions."
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q109719325"
+      },
+      "prov:label": "Synthetic question-format expansion (MCQ / KPrim / free-text) by GPT-5.4",
+      "sc:description": "Each VP1 seed question was expanded by GPT-5.4 into three formats: MCQ (5 options), KPrim (4 true/false statements), and free-text. Each free-text variant was paired with an LLM-generated scoring rubric. The LLM was given the seed question and reference answer; no images were sent. All expansions were approved or revised by VP1.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "prov:label": "GPT-5.4 (OpenAI)"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q1172378"
+      },
+      "prov:label": "Text-only guessability filtering",
+      "sc:description": "Each MCQ and KPrim candidate was queried against GPT-5.2 (temperature 0) with the stem and options but no image: three trials per MCQ with cyclic-shifted option order, one trial per KPrim. A candidate was flagged if any MCQ trial answered correctly (strict policy) or if the worst-case KPrim trial answered ≥3/4 statements correctly. Flagged candidates were regenerated by GPT-5.4 before escalation to VP1. Free-text variants were not filtered.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:SoftwareAgent",
+          "prov:label": "GPT-5.2 (OpenAI) — temperature 0, no image input"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q3306762"
+      },
+      "prov:label": "Final manual approval by gold-standard veterinary pathologist (VP1)",
+      "sc:description": "All 1,251 final questions, choices, and rubrics were reviewed and either approved, revised, or rejected by VP1.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:HumanAgent",
+          "prov:label": "VP1 (gold-standard author; identity anonymized)"
+        }
+      ]
+    },
+    {
+      "@type": "prov:Activity",
+      "prov:type": {
+        "@id": "https://www.wikidata.org/wiki/Q3306762"
+      },
+      "prov:label": "External reader study (Krippendorff inter-rater agreement)",
+      "sc:description": "100 question-image pairs (Set A) were sampled and independently answered by VP1, VP2, and VP3 through a custom online platform; inter-rater agreement was quantified with Krippendorff alpha. A second 100-question Set B expanded the study to a board-certified physician pathologist (PP1) and to a no-image condition. Results are reported in the paper and appendix.",
+      "prov:wasAttributedTo": [
+        {
+          "@type": "prov:HumanAgent",
+          "prov:label": "VP1 (gold-standard author; identity anonymized)"
+        },
+        {
+          "@type": "prov:HumanAgent",
+          "prov:label": "VP2 (independent external reader; identity anonymized)",
+          "sc:description": "ECVP-board-certified veterinary pathologist. VP2 and VP3 are drawn from a pool spanning COMPATH (University of Bern) and UC Davis."
+        },
+        {
+          "@type": "prov:HumanAgent",
+          "prov:label": "VP3 (independent external reader; identity anonymized)"
+        },
+        {
+          "@type": "prov:HumanAgent",
+          "prov:label": "PP1 (physician-pathologist reader; identity anonymized)",
+          "sc:description": "Board-certified physician pathologist trained in human pathology, at a Mass General Brigham / Harvard Medical School–affiliated US institution."
+        }
+      ]
+    }
+  ],
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "viper-parquet",
+      "name": "viper.parquet",
+      "description": "All 1,251 VIPER questions with their associated H&E ROIs, choices, gold-standard answers, scoring rubrics, and per-question metadata (organ, category, magnification, source).",
+      "contentUrl": "https://huggingface.co/datasets/MahmoodLab/viper/resolve/main/viper.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "6856757308c32d1ac97ebf3cd2047f7986ca3af7f67c9794577c09ab88c55f03",
+      "md5": "99910517d0f0f54e21a85e74090d4e87",
+      "contentSize": "2417066566 B"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "questions",
+      "name": "questions",
+      "description": "One row per VIPER question (1,251 total).",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "questions/image",
+          "name": "image",
+          "description": "1024x1024 RGB H&E-stained rat histology ROI, PNG-encoded.",
+          "dataType": "sc:ImageObject",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "image"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/image_id",
+          "name": "image_id",
+          "description": "Stable content-hashed identifier of the form viper_<organ_slug>_<sha256(image_bytes)[:12]>.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "image_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/question",
+          "name": "question",
+          "description": "The question stem.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "question"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/question_type",
+          "name": "question_type",
+          "description": "Question format. One of: mcq (multiple-choice, 5 options), kprim (4 true/false statements), free_text (open-ended).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "question_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/answer",
+          "name": "answer",
+          "description": "Gold-standard answer. MCQ: option letter (A-E). KPrim: JSON-encoded list of four booleans. Free-text: reference answer string.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "answer"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/choices",
+          "name": "choices",
+          "description": "Answer options. Five strings for MCQ, four statements for KPrim, empty list for free-text.",
+          "dataType": "sc:Text",
+          "repeated": true,
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "choices"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/synonyms",
+          "name": "synonyms",
+          "description": "Optional JSON-encoded list of acceptable free-text synonyms used during LLM-as-judge scoring.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "synonyms"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/scoring_rubric",
+          "name": "scoring_rubric",
+          "description": "Optional free-text grading rubric provided to the LLM judge for free-text scoring.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "scoring_rubric"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/organ",
+          "name": "organ",
+          "description": "Paper-aligned organ label. One of: kidney, liver, thyroid, male_reproductive_system, urinary_bladder, lung, heart, gastrointestinal_tract, salivary_gland.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "organ"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/category",
+          "name": "category",
+          "description": "Paper §2 question-category taxonomy. One of: identify_anatomy, probe_over_reading, localize_in_image, identify_pathology, characterize_feature, identify_artifact, quantify_feature.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "category"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/magnification",
+          "name": "magnification",
+          "description": "Original scan magnification. One of: 2.5x, 5x, 20x.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "magnification"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/source",
+          "name": "source",
+          "description": "Upstream image source. One of: TG-GATEs (CC BY-SA 2.1 JP), MMO (CC BY-NC 4.0).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "source"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

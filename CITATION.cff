@@ -1,0 +1,78 @@
+cff-version: 1.2.0
+title: "VIPER: An Expert-Curated Benchmark for Vision-Language Models in Veterinary Pathology"
+message: "If you use VIPER (the dataset or this evaluation suite), please cite the following paper."
+type: dataset
+authors:
+  - given-names: Luca
+    family-names: Weishaupt
+    affiliation: "Harvard-MIT HST; Mass General Brigham; Harvard Medical School"
+  - given-names: Simone
+    family-names: de Brot
+    affiliation: "COMPATH, University of Bern"
+  - given-names: Javier
+    family-names: Asin
+    affiliation: "UC Davis"
+  - given-names: Llorenç
+    family-names: Grau-Roma
+    affiliation: "COMPATH, University of Bern"
+  - given-names: Nic
+    family-names: Reitsam
+    affiliation: "Mass General Brigham; University of Augsburg"
+  - given-names: Andrew H.
+    family-names: Song
+    affiliation: "UT MD Anderson Cancer Center"
+  - given-names: Dongmin
+    family-names: Bang
+    affiliation: "Mass General Brigham; Harvard Medical School"
+  - given-names: Long Phi
+    family-names: Le
+    affiliation: "Mass General Brigham"
+  - given-names: Jakob Nikolas
+    family-names: Kather
+    affiliation: "TU Dresden"
+  - given-names: Faisal
+    family-names: Mahmood
+    email: faisalmahmood@bwh.harvard.edu
+    affiliation: "Mass General Brigham; Harvard Medical School"
+  - given-names: Guillaume
+    family-names: Jaume
+    email: guillaume.jaume@unil.ch
+    affiliation: "University of Lausanne"
+url: "https://github.com/mahmoodlab/viper"
+repository-code: "https://github.com/mahmoodlab/viper"
+license: "CC-BY-NC-ND-4.0"
+keywords:
+  - veterinary pathology
+  - toxicologic pathology
+  - vision-language models
+  - benchmark
+  - histopathology
+preferred-citation:
+  type: conference-paper
+  title: "VIPER: An Expert-Curated Benchmark for Vision-Language Models in Veterinary Pathology"
+  authors:
+    - given-names: Luca
+      family-names: Weishaupt
+    - given-names: Simone
+      family-names: de Brot
+    - given-names: Javier
+      family-names: Asin
+    - given-names: Llorenç
+      family-names: Grau-Roma
+    - given-names: Nic
+      family-names: Reitsam
+    - given-names: Andrew H.
+      family-names: Song
+    - given-names: Dongmin
+      family-names: Bang
+    - given-names: Long Phi
+      family-names: Le
+    - given-names: Jakob Nikolas
+      family-names: Kather
+    - given-names: Faisal
+      family-names: Mahmood
+    - given-names: Guillaume
+      family-names: Jaume
+  year: 2026
+  conference:
+    name: "NeurIPS Datasets and Benchmarks"
