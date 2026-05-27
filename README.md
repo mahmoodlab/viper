@@ -14,7 +14,7 @@ This project was developed by the [Mahmood Lab](https://faisal.ai/) at Harvard M
 
 > Weishaupt, de Brot, Asin, Grau-Roma, Reitsam, Song, Bang, Le, Kather, Mahmood, Jaume.
 > **VIPER: An Expert-Curated Benchmark for Vision-Language Models in Veterinary Pathology.**
-> *NeurIPS Datasets and Benchmarks*, 2026.
+> 2026.
 
 ### Key Features
 
