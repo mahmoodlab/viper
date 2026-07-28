@@ -56,7 +56,7 @@
   "sameAs": "https://github.com/mahmoodlab/viper",
   "version": "1.0.0",
   "datePublished": "2026-05-01",
-  "license": "https://creativecommons.org/licenses/by-nc-nd/4.0/",
+  "license": "Mixed, per record; see the image_license and annotation_license fields. Images derived from Open TG-GATEs: CC BY-SA 2.1 JP (https://creativecommons.org/licenses/by-sa/2.1/jp/). Images derived from MMO: CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/). VIPER annotations: CC BY-NC 4.0 (https://creativecommons.org/licenses/by-nc/4.0/).",
   "keywords": [
     "veterinary pathology",
     "toxicologic pathology",
@@ -474,6 +474,36 @@
             },
             "extract": {
               "column": "source"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/image_license",
+          "name": "image_license",
+          "description": "License of the ROI image in this record, inherited from its upstream source. One of: CC BY-SA 2.1 JP (TG-GATEs), CC BY-NC 4.0 (MMO).",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "image_license"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "questions/annotation_license",
+          "name": "annotation_license",
+          "description": "License of the VIPER annotation layer for this record: question, answer key, distractors, scoring rubric, and organ, category and magnification metadata. Always CC BY-NC 4.0.",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "viper-parquet"
+            },
+            "extract": {
+              "column": "annotation_license"
             }
           }
         }

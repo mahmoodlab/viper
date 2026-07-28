@@ -199,7 +199,11 @@ to evaluate models against it lives at
 [https://github.com/mahmoodlab/viper](https://github.com/mahmoodlab/viper).
 
 **License.**
-The dataset is released under CC BY-NC-ND 4.0.
+The dataset is a collection whose elements retain their original terms, with no
+blanket license over the whole. Images derived from Open TG-GATEs are CC BY-SA
+2.1 JP, images derived from MMO are CC BY-NC 4.0, and the VIPER annotation layer
+is CC BY-NC 4.0. Each record carries `image_license` and `annotation_license`.
+See [`LICENSE-DATA.md`](../LICENSE-DATA.md).
 
 ## Maintenance
 

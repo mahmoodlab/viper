@@ -3,7 +3,8 @@
 > An expert-curated benchmark for vision-language models in veterinary pathology.
 
 [![Dataset](https://img.shields.io/badge/Dataset-MahmoodLab%2Fviper-yellow.svg)](https://huggingface.co/datasets/MahmoodLab/viper)
-[![License](https://img.shields.io/badge/license-CC--BY--NC--ND%204.0-lightgrey.svg)](LICENSE)
+[![Code](https://img.shields.io/badge/code-CC--BY--NC%204.0-lightgrey.svg)](LICENSE)
+[![Data](https://img.shields.io/badge/data-per--source-lightgrey.svg)](LICENSE-DATA.md)
 [![CI](https://github.com/mahmoodlab/viper/actions/workflows/ci.yml/badge.svg)](https://github.com/mahmoodlab/viper/actions/workflows/ci.yml)
 
 VIPER is the first expert-curated benchmark for evaluating vision-language models on rodent toxicologic pathology, a domain that anchors preclinical drug-safety assessment but has been almost entirely absent from the pathology-VLM evaluation ecosystem. The benchmark contains **1,251 questions over 419 H&E-stained rat histology images**, spans **9 organs**, and was authored and validated by board-certified veterinary pathologists (ECVP). 
@@ -157,7 +158,9 @@ sample["category"]       # one of 7 paper categories
 
 ### License
 
-Code and data are released under [CC BY-NC-ND 4.0](LICENSE). TG-GATEs is released under CC BY-SA 2.1 JP and MMO under CC BY-NC 4.0. See [`docs/DATASHEET.md`](docs/DATASHEET.md) for the full licensing discussion.
+Code in this repository is released under [CC BY-NC 4.0](LICENSE) and is for non-commercial research use. The dataset is a collection whose elements retain their original terms: images derived from Open TG-GATEs are CC BY-SA 2.1 JP, images derived from MMO are CC BY-NC 4.0, and the VIPER annotation layer is CC BY-NC 4.0. Every record carries `image_license` and `annotation_license`. See [`LICENSE-DATA.md`](LICENSE-DATA.md) and [`docs/DATASHEET.md`](docs/DATASHEET.md).
+
+For commercial licensing enquiries, contact the maintainers.
 
 ### Contact
 
